@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>To Do List</h1>
+    <h1>Todos</h1>
+    <hr />
     @if(count($todos)>0)
         @foreach($todos as $todo)
         <div class="card card-body bg-light">
-            <h3>{{$todo->text}}</h3>
-            <span class="badge badge-info">{{$todo->due}}</span>
+            <h3><a href="todo/{{$todo->id}}">{{$todo->text}}</a></h3>
+            <div class="badge badge-info">{{$todo->due}}</div>
         </div>
         @endforeach
     @endif
