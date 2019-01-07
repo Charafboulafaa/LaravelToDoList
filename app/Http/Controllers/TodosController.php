@@ -47,7 +47,7 @@ class TodosController extends Controller
 
         $todo->save();
 
-        return redirect('/')->with('success', 'Task created');
+        return redirect('/')->with('success', 'Task Created');
     }
 
     /**
@@ -105,6 +105,7 @@ class TodosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Todo::find($id)->delete();
+        return redirect('/')->with('success', 'Task Deleted');
     }
 }
